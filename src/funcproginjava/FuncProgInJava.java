@@ -28,13 +28,18 @@ public class FuncProgInJava {
 
         // Map example
         Map<String, Integer> pageVisitsImperative = new HashMap<>();
+        Map<String, Integer> pageVisitsFunctional = new HashMap<>();
 
         String page = "https://agiledeveloper.com";
 
         incrementPageVisitImperative(pageVisitsImperative, page);
         incrementPageVisitImperative(pageVisitsImperative, page);
 
+        incrementPageVisitFunctional(pageVisitsFunctional, page);
+        incrementPageVisitFunctional(pageVisitsFunctional, page);
+
         System.out.println(pageVisitsImperative.get(page));
+        System.out.println(pageVisitsFunctional.get(page));
 
     }
 
@@ -72,6 +77,11 @@ public class FuncProgInJava {
         }
 
         pageVisits.put(page, pageVisits.get(page) + 1);
+    }
+
+    // Functional Style - Map Example
+    public static void incrementPageVisitFunctional(Map<String, Integer> pageVisits, String page) {
+        pageVisits.merge(page, 1, (oldValue, value) -> oldValue + value);
     }
 
 }
