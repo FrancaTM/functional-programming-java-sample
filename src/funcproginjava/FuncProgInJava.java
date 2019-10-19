@@ -26,6 +26,16 @@ public class FuncProgInJava {
         findNemoImperative(names);
         findNemoDeclarative(names);
 
+        // Map example
+        Map<String, Integer> pageVisitsImperative = new HashMap<>();
+
+        String page = "https://agiledeveloper.com";
+
+        incrementPageVisitImperative(pageVisitsImperative, page);
+        incrementPageVisitImperative(pageVisitsImperative, page);
+
+        System.out.println(pageVisitsImperative.get(page));
+
     }
 
     // Imperative Style - Example
@@ -53,6 +63,15 @@ public class FuncProgInJava {
         } else {
             System.out.println("Sorry, Nemo not found");
         }
+    }
+
+    // Imperative Style - Map Example
+    public static void incrementPageVisitImperative(Map<String, Integer> pageVisits, String page) {
+        if (!pageVisits.containsKey(page)) {
+            pageVisits.put(page, 0);
+        }
+
+        pageVisits.put(page, pageVisits.get(page) + 1);
     }
 
 }
