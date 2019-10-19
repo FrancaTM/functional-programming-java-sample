@@ -24,6 +24,7 @@ public class FuncProgInJava {
         List<String> names = Arrays.asList("Dory", "Gill", "Bruce", "Nemo", "Darla", "Marlin", "Jacques");
 
         findNemoImperative(names);
+        findNemoDeclarative(names);
 
     }
 
@@ -39,6 +40,15 @@ public class FuncProgInJava {
         }
 
         if (found) {
+            System.out.println("Found Nemo");
+        } else {
+            System.out.println("Sorry, Nemo not found");
+        }
+    }
+
+    // Declarative Style - Example
+    public static void findNemoDeclarative(List<String> names) {
+        if (names.contains("Nemo")) {
             System.out.println("Found Nemo");
         } else {
             System.out.println("Sorry, Nemo not found");
